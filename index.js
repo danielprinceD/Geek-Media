@@ -11,8 +11,13 @@ const storage = multer.diskStorage({
     cb(null, file.originalname);
   },
 });
-
-const upload = multer({ storage: storage });
+const upload = multer({
+  storage: storage,
+  fileFilter: function (req, file, cb) {
+    if (file.mimetype == "application/pdf") cb(null, true);
+    else cb(null, false);
+  },
+});
 const PORT = 8000 || 3000;
 
 app.get("/", (req, res) => {
@@ -20,7 +25,8 @@ app.get("/", (req, res) => {
 });
 
 app.post("/api/upload", upload.single("book"), (req, res) => {
-  res.status(200).json({ status: "Success", file: req.file });
+  if (req.file) res.status(200).json({ status: "Success", file: req.file });
+  else res.status(404).json({ status: "File not accepted", file: req.file });
 });
 
 app.use(express.static("./Books"));
