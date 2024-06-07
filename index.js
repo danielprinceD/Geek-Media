@@ -55,6 +55,7 @@ app.post("/api/upload", upload.single("book"), (req, res) => {
       bookname: req.body.name,
       filename: req.file.filename,
       subject: req.body.subject,
+      description: req.body.description || "None",
       location: req.file.path,
     });
     res.status(200).json({ status: "Success", file: req.file });
