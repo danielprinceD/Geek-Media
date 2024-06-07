@@ -23,7 +23,7 @@ class BlankFragment : Fragment() {
         binding = FragmentBlankBinding.inflate(layoutInflater)
         Handler().postDelayed({
                               binding.root.findNavController().navigate(R.id.action_blankFragment2_to_login_page2)
-        } , 3000)
+        } , 2000)
         return binding.root
     }
 
