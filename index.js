@@ -3,10 +3,12 @@ const cors = require("cors");
 const multer = require("multer");
 const serveIndex = require("serve-index");
 const { default: axios } = require("axios");
+const bodyParser = require("body-parser");
 app = express();
+app.use(bodyParser.json());
 app.use(cors({ origin: "*" }));
 app.use("/Books", serveIndex("./Books"));
-const DB_URL = "http://localhost:3000/books";
+const DB_URL = "http://localhost:3000";
 app.use("/Books", express.static("./Books"));
 const id =
   new Date().getTime() +
@@ -45,21 +47,44 @@ app.get("/api/upload", (req, res) => {
 });
 
 app.get("/api/books", async (req, res) => {
-  const books = await axios.get(DB_URL);
+  const books = await axios.get(DB_URL + "/books");
   res.json(books.data);
 });
 
+app.get("/api/subject", async (req, res) => {
+  const subject = await axios.get(DB_URL + "/subject");
+  res.json(subject.data);
+});
+
+app.post("/api/update/subject", async (req, res) => {
+  const { name } = req.body;
+  try {
+    if (name) await axios.post(DB_URL + "/subject", req.body);
+    else res.json({ status: "Invalid" });
+  } catch (ex) {
+    console.log(ex);
+  }
+  res.json();
+});
+
 app.post("/api/upload", upload.single("book"), (req, res) => {
-  if (req.file && req.body.name && req.body.subject) {
-    axios.post(DB_URL, {
-      bookname: req.body.name,
-      filename: req.file.filename,
-      subject: req.body.subject,
-      description: req.body.description || "None",
-      location: req.file.path,
-    });
-    res.status(200).json({ status: "Success", file: req.file });
-  } else res.status(404).json({ status: "Error" });
+  try {
+    console.log(req);
+    if (req.file && req.body.name && req.body.subject) {
+      axios.post(DB_URL + "/books", {
+        bookname: req.body.name,
+        filename: req.file.filename,
+        subject: req.body.subject,
+        description: req.body.description || "None",
+        location: req.file.path,
+      });
+      console.log(req.body);
+      res.status(200).json({ status: "Success", file: req.file });
+    } else res.status(404).json({ status: "Error" });
+  } catch (ex) {
+    console.log(ex);
+    res.json({});
+  }
 });
 
 app.listen(PORT, () => {
