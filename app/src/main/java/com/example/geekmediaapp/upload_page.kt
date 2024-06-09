@@ -29,6 +29,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.liveData
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.example.geekmediaapp.Retrofit.RetrofitInstance
 import com.example.geekmediaapp.Retrofit.RetrofitService
 import com.example.geekmediaapp.Retrofit.Subject
@@ -60,10 +62,6 @@ class upload_page : Fragment() {
             var res = serviceInstance.getSubject()
             emit(res)
         }
-
-        Toaster.toast(binding.root.context, response.isInitialized.toString())
-
-
     }
 
     override fun onCreateView(
@@ -93,6 +91,9 @@ class upload_page : Fragment() {
                     Toaster.toast(root.context, "Field is Empty")
             }
             selector.setOnClickListener { filePicker() }
+            listView.setOnClickListener{
+                it.findNavController().navigate(com.example.geekmediaapp.R.id.action_upload_page_to_book_list)
+            }
         }
 
         return binding.root

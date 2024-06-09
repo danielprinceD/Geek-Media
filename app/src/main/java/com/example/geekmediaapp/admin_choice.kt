@@ -24,7 +24,7 @@ class admin_choice : Fragment() {
         binding = FragmentAdminChoiceBinding.inflate(layoutInflater)
         binding.apply {
             uploadBook.setOnClickListener{navUpload()}
-            bookList.setOnClickListener{}
+            bookList.setOnClickListener{nav(R.id.action_admin_choice_to_book_list)}
         }
         return binding.root
     }
