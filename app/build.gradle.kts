@@ -39,6 +39,7 @@ android {
 dependencies {
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     val lifecycle_version = "2.8.1"
+    implementation("com.squareup.okhttp3:okhttp:4.9.0")
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
     kapt("androidx.navigation:navigation-safe-args-gradle-plugin:2.7.7")
