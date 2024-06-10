@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.geekmediaapp.databinding.FragmentRegisterPageBinding
 
 class register_page : Fragment() {
@@ -20,7 +21,7 @@ class register_page : Fragment() {
     ): View? {
         binding = FragmentRegisterPageBinding.inflate(layoutInflater)
         binding.apply {
-
+            loginBtn.setOnClickListener{findNavController().navigate(R.id.action_register_page2_to_login_page2)}
         }
         return binding.root
     }
