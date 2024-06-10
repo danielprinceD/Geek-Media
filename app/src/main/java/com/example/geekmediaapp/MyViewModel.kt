@@ -15,17 +15,17 @@ import retrofit2.Response
 import java.security.acl.Owner
 
 class MyViewModel : ViewModel() {
-    private val serviceInstance: RetrofitService = RetrofitInstance.getInstance().create(RetrofitService::class.java)
     private var arr : Array<String> = arrayOf("Select Subject" ,"Python" , "C++" , "Java")
+    private val serviceInstance: RetrofitService = RetrofitInstance.getInstance().create(RetrofitService::class.java)
     private val bookResponse : LiveData<Response<Library>> = liveData {
         val res = serviceInstance.getBookList()
         emit(res)
     }
-     fun getSubjectList() : Array<String> {
-        return arr
-    }
     fun getBookList() : LiveData<Response<Library>>{
         return bookResponse
+    }
+     fun getSubjectList() : Array<String> {
+        return arr
     }
 
 }

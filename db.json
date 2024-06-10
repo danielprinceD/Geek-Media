@@ -71,6 +71,54 @@
       "subject": "Python",
       "description": "new tips are available in the pack",
       "location": "Books\\1717937589604---2021-2022.pdf"
+    },
+    {
+      "id": "8166",
+      "bookname": "12",
+      "filename": "1718032829394---Aadhavan.pdf",
+      "subject": "C++",
+      "description": "12",
+      "location": "Books\\1718032829394---Aadhavan.pdf"
+    },
+    {
+      "id": "a814",
+      "bookname": "12",
+      "filename": "1718033160721---Aadhavan.pdf",
+      "subject": "C++",
+      "description": "12",
+      "location": "Books\\1718033160721---Aadhavan.pdf"
+    },
+    {
+      "id": "c7de",
+      "bookname": "b",
+      "filename": "1718033333902---6.1.1_additional.pdf",
+      "subject": "C++",
+      "description": "b",
+      "location": "Books\\1718033333902---6.1.1_additional.pdf"
+    },
+    {
+      "id": "6636",
+      "bookname": "c",
+      "filename": "1718035488793---116383080.pdf",
+      "subject": "C++",
+      "description": "f",
+      "location": "Books\\1718035488793---116383080.pdf"
+    },
+    {
+      "id": "8500",
+      "bookname": "hh",
+      "filename": "1718036605492---2401.15024v1.pdf",
+      "subject": "Java",
+      "description": " b",
+      "location": "Books\\1718036605492---2401.15024v1.pdf"
+    },
+    {
+      "id": "5740",
+      "bookname": "j",
+      "filename": "1718037507024---116383080.pdf",
+      "subject": "C++",
+      "description": "g",
+      "location": "Books\\1718037507024---116383080.pdf"
     }
   ],
   "subject": [

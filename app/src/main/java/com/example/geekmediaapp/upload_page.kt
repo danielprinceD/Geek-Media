@@ -5,6 +5,7 @@ import android.R
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.Activity.RESULT_OK
+import android.app.AlertDialog
 import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
@@ -54,6 +55,7 @@ class upload_page : Fragment() {
     private lateinit var model: MyViewModel
     private lateinit var selectedFile: File
     private lateinit var uri : Uri
+    private lateinit var uploadingDialog: Dialog
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = FragmentUploadPageBinding.inflate(layoutInflater)
@@ -68,7 +70,7 @@ class upload_page : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
+        uploadingDialog = Dialog(requireActivity())
         binding = FragmentUploadPageBinding.inflate(layoutInflater)
         model = ViewModelProvider.create(this).get(MyViewModel::class.java)
         binding.uploadText.text = ""
@@ -101,6 +103,7 @@ class upload_page : Fragment() {
 
     private fun uploadAction() {
         if (selectedFile != null && binding.filename.text.isNotEmpty() && binding.spinner.selectedItemId.toString() != "0") {
+            uploadingDialog.startDialog()
             val requestBody = RequestBody.create("application/pdf".toMediaTypeOrNull() , selectedFile)
 
             val pdfBody = MultipartBody.Part.createFormData("book", selectedFile.name, requestBody)
@@ -119,10 +122,13 @@ class upload_page : Fragment() {
                 override fun onResponse(call: Call<Void>, response: Response<Void>) {
                     if (response.isSuccessful) {
                         Toaster.toast(binding.root.context, "Uploaded Successful")
+
                     } else Toaster.toast(binding.root.context, "Upload Unsuccessful")
+                        uploadingDialog.dismiss()
                 }
 
                 override fun onFailure(call: Call<Void>, t: Throwable) {
+                    uploadingDialog.dismiss()
                     Toaster.toast(binding.root.context, "${t.message} is error")
                 }
             })

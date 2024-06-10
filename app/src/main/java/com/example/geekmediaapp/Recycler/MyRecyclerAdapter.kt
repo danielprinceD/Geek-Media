@@ -35,6 +35,7 @@ class MyViewHolder(private val item : View) : RecyclerView.ViewHolder(item){
         val read = item.findViewById<Button>(R.id.read)
         book.text = "Name : " + data.bookname
         bookDesc.text = "Description : " + data.description
+        bookDesc.text = bookDesc.text.toString() + "\n\nSubject : ${data.subject}"
         read.setOnClickListener {
             val bundle = bundleOf("location" to data.location)
             itemView.findNavController().navigate(R.id.action_book_list_to_books_page , bundle)
