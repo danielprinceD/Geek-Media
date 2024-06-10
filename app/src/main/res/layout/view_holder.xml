@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:backgroundTint="@color/white"
+    android:background="@color/white"
     android:layout_height="wrap_content">
 
     <LinearLayout
@@ -32,6 +33,14 @@
 
         <TextView
             android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:gravity="center"
+            android:text="TextView"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+        <TextView
+            android:id="@+id/subject"
             android:layout_width="match_parent"
             android:layout_height="46dp"
             android:gravity="center"
