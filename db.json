@@ -138,5 +138,17 @@
       "id": "009e",
       "name": "Java"
     }
+  ],
+  "users": [
+    {
+      "id": "6a8c",
+      "name": "admin",
+      "password": "differential"
+    },
+    {
+      "id": "9e72",
+      "name": "admin",
+      "password": "differential"
+    }
   ]
 }

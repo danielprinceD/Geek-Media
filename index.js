@@ -6,6 +6,7 @@ const { default: axios } = require("axios");
 const bodyParser = require("body-parser");
 app = express();
 app.use(bodyParser.json());
+app.use(bodyParser({ extended: true }));
 app.use(cors({ origin: "*" }));
 app.use("/Books", serveIndex("./Books"));
 const DB_URL = "http://localhost:3000";
@@ -38,6 +39,29 @@ const upload = multer({
   },
 });
 const PORT = 8000 || 3000;
+
+app.post("/api/register", async (req, res) => {
+  const { name, password } = req.body;
+  console.log(req.body);
+  if (name && password) {
+    await axios.post(DB_URL + "/users", { name: name, password: password });
+    res.json({ status: "Success" });
+  }
+  res.json({});
+});
+
+app.post("/api/auth", async (req, res) => {
+
+  const body = req.body;
+  if (body.name && body.password) {
+    const users = (await axios.get(DB_URL + "/users")).data;
+    for (user of users) {
+      if(user.name === body.name && body.password === user.password)
+        res.json({"auth" : true})
+    }
+  }
+  res.json({"auth" : false});
+});
 
 app.get("/", (req, res) => {
   res.json({ request: "GET" });
