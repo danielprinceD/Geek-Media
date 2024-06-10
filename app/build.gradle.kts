@@ -47,6 +47,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version")
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("io.github.afreakyelf:Pdf-Viewer:2.1.1")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
     implementation(libs.androidx.core.ktx)

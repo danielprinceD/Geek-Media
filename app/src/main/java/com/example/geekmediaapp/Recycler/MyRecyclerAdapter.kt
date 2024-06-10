@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.geekmediaapp.R
@@ -35,7 +36,8 @@ class MyViewHolder(private val item : View) : RecyclerView.ViewHolder(item){
         book.text = "Name : " + data.bookname
         bookDesc.text = "Description : " + data.description
         read.setOnClickListener {
-            itemView.findNavController().navigate(R.id.action_book_list_to_books_page)
+            val bundle = bundleOf("location" to data.location)
+            itemView.findNavController().navigate(R.id.action_book_list_to_books_page , bundle)
         }
     }
 }
