@@ -74,6 +74,6 @@ class MyViewHolder(private val item : View) : RecyclerView.ViewHolder(item){
         request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS , filename)
         val manager : DownloadManager = itemView.context.getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
         manager.enqueue(request)
-        Toaster.toast( itemView.context, "Downlaoding ${filename}")
+        Toaster.toast( itemView.context, "Downloading ${filename}")
     }
 }

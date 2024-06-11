@@ -78,7 +78,7 @@ class upload_page : Fragment() {
             uploadBtn.isEnabled = false
             var adapter = ArrayAdapter(
                 binding.root.context,
-                R.layout.simple_spinner_item,
+                com.example.geekmediaapp.R.layout.spinner_item,
                 model.getSubjectList()
             )
             spinner.adapter = adapter
