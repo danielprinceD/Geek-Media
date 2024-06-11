@@ -51,6 +51,7 @@ class book_list : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         MyList = mutableListOf()
+
         dialog = Dialog(requireActivity())
         getBookList().observe(requireActivity() , Observer {
             val iterator = it.body()?.listIterator()
