@@ -18,6 +18,7 @@ import android.os.Environment
 import android.os.FileUtils
 import android.provider.MediaStore
 import android.provider.OpenableColumns
+import android.text.Editable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -73,7 +74,6 @@ class upload_page : Fragment() {
         uploadingDialog = Dialog(requireActivity())
         binding = FragmentUploadPageBinding.inflate(layoutInflater)
         model = ViewModelProvider.create(this).get(MyViewModel::class.java)
-        binding.uploadText.text = ""
         binding.apply {
             uploadBtn.isEnabled = false
             var adapter = ArrayAdapter(
@@ -86,6 +86,11 @@ class upload_page : Fragment() {
                 if (bookName.text.isNotEmpty() && spinner.selectedItemId.toString() != "0" && desc.text.isNotEmpty()) {
                     try {
                         uploadAction()
+                        bookName.setText("")
+                        desc.setText("")
+                        spinner.setSelection(0)
+                        filename.text = "No File is Selected"
+                        selectedFile = null!!
                     } catch (ex: Exception) {
                         Toaster.toast(root.context, "${ex}")
                     }

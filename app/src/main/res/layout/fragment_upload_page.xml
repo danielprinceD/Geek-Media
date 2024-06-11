@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
     android:backgroundTint="@color/white"
-    tools:context=".upload_page">
+    tools:context=".upload_page"
+    tools:layout_editor_absoluteX="-6dp"
+    tools:layout_editor_absoluteY="-48dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="-8dp"
-        tools:layout_editor_absoluteY="-49dp">
+        tools:layout_editor_absoluteX="-6dp"
+        tools:layout_editor_absoluteY="-48dp">
 
 
         <EditText
@@ -22,21 +24,20 @@
             android:layout_marginStart="108dp"
             android:layout_marginEnd="93dp"
             android:ems="10"
-            android:textColor="@color/black"
             android:hint="Book Name"
             android:inputType="text"
             android:text=""
+            android:textColor="@color/black"
             android:textColorHint="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/desc"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.193" />
+            app:layout_constraintTop_toBottomOf="@+id/uploadText"
+            app:layout_constraintVertical_bias="0.5" />
 
         <EditText
             android:id="@+id/desc"
-            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="108dp"
@@ -44,46 +45,48 @@
             android:ems="10"
             android:hint="Book Description"
             android:inputType="text"
+            android:textColor="@color/black"
             android:textColorHint="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/spinner"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.282" />
+            app:layout_constraintTop_toBottomOf="@+id/bookName"
+            app:layout_constraintVertical_bias="0.5" />
 
         <TextView
             android:id="@+id/filename"
             android:layout_width="410dp"
             android:layout_height="49dp"
             android:ems="10"
-            android:textSize="18dp"
             android:gravity="center"
             android:inputType="text"
             android:text="No File is Selected"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toTopOf="@+id/uploadBtn"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.478" />
+            app:layout_constraintTop_toBottomOf="@+id/spinner"
+            app:layout_constraintVertical_bias="0.5" />
 
         <TextView
             android:id="@+id/uploadText"
-            android:layout_width="411dp"
-            android:layout_height="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
             android:background="@color/primary"
             android:gravity="center"
+            android:padding="5dp"
             android:text="Upload Book"
             android:textColor="@color/white"
             android:textSize="22sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/bookName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.05" />
+            app:layout_constraintVertical_bias="0.5" />
 
         <Button
             android:id="@+id/uploadBtn"
@@ -93,12 +96,12 @@
             android:backgroundTint="@color/secondary"
             android:text="Upload"
             android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/listView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintHorizontal_bias="0.453"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.593" />
+            app:layout_constraintTop_toBottomOf="@+id/filename"
+            app:layout_constraintVertical_bias="0.5" />
 
         <Button
             android:id="@+id/selector"
@@ -110,10 +113,10 @@
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.588"
+            app:layout_constraintHorizontal_bias="0.537"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.593" />
+            app:layout_constraintTop_toBottomOf="@+id/filename"
+            app:layout_constraintVertical_bias="0.262" />
 
         <Button
             android:id="@+id/listView"
@@ -125,22 +128,22 @@
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.621"
+            app:layout_constraintHorizontal_bias="0.571"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.921" />
+            app:layout_constraintTop_toBottomOf="@+id/uploadBtn"
+            app:layout_constraintVertical_bias="0.5" />
 
         <Spinner
             android:id="@+id/spinner"
             android:layout_width="208dp"
             android:layout_height="43dp"
-            android:outlineSpotShadowColor="@color/black"
             android:outlineAmbientShadowColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:outlineSpotShadowColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/filename"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.541"
+            app:layout_constraintHorizontal_bias="0.512"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.373" />
+            app:layout_constraintTop_toBottomOf="@+id/desc"
+            app:layout_constraintVertical_bias="0.5" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

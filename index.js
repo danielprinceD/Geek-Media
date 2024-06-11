@@ -45,22 +45,21 @@ app.post("/api/register", async (req, res) => {
   console.log(req.body);
   if (name && password) {
     await axios.post(DB_URL + "/users", { name: name, password: password });
-    res.json({ status: "Success" });
+    res.status(200).json({ status: "Success" });
   }
-  res.json({});
+  res.status(404).json({});
 });
 
 app.post("/api/auth", async (req, res) => {
-
   const body = req.body;
   if (body.name && body.password) {
     const users = (await axios.get(DB_URL + "/users")).data;
     for (user of users) {
-      if(user.name === body.name && body.password === user.password)
-        res.json({"auth" : true})
+      if (user.name === body.name && body.password === user.password)
+        res.json({ auth: true });
     }
   }
-  res.json({"auth" : false});
+  res.json({ auth: false });
 });
 
 app.get("/", (req, res) => {
