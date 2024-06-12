@@ -21,6 +21,4 @@ interface RetrofitService {
   ) : Call<Void>
 
    @POST("/api/update/book") suspend fun postSubject()
-   @POST("/api/register") suspend fun registerUser(@Body user : User) : Call<Void>
-   @GET("api/auth") suspend fun loginUser(@Body user : User) : Call<Void>
 }

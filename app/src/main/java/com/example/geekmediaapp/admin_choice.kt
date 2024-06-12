@@ -1,5 +1,7 @@
 package com.example.geekmediaapp
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -25,7 +27,18 @@ class admin_choice : Fragment() {
         binding.apply {
             uploadBook.setOnClickListener{navUpload()}
             bookList.setOnClickListener{nav(R.id.action_admin_choice_to_book_list)}
+            logout.setOnClickListener{
+                val shared = requireContext().getSharedPreferences("Shared" , Context.MODE_PRIVATE)
+                val editor = shared.edit()
+                editor.apply{
+                    putString("email" , "")
+                    commit()
+                }
+                Toaster.toast(requireContext() , "You've been logged out")
+                nav(R.id.action_admin_choice_to_login_page2)
+            }
         }
+
         return binding.root
     }
     fun nav(id : Int ){

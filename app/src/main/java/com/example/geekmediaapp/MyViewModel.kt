@@ -33,20 +33,5 @@ class MyViewModel : ViewModel() {
         return arr
     }
 
-    suspend fun registerUser(user: User) : Boolean{
-        var isSuccess = false
-        serviceInstance.registerUser(user).enqueue(
-            object : Callback<Void>{
-                override fun onResponse(call: Call<Void>, response: Response<Void>) {
-                    if(response.isSuccessful)
-                        isSuccess = true
-                }
-                override fun onFailure(call: Call<Void>, t: Throwable) {
-                }
-            }
-        )
-
-        return isSuccess
-    }
 
 }

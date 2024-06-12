@@ -40,6 +40,9 @@
         <action
             android:id="@+id/action_admin_choice_to_book_list"
             app:destination="@id/book_list" />
+        <action
+            android:id="@+id/action_admin_choice_to_login_page2"
+            app:destination="@id/login_page2" />
     </fragment>
     <fragment
         android:id="@+id/book_list"

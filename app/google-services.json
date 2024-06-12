@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "379824134083",
+    "project_id": "booklogin-2a22d",
+    "storage_bucket": "booklogin-2a22d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:379824134083:android:8232b0ce015c9df298cf76",
+        "android_client_info": {
+          "package_name": "com.example.geekmediaapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCinsLOMXPHOMg-67vq8d9D1FEvZVUIgRs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

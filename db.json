@@ -1,77 +1,6 @@
 {
   "books": [
-    {
-      "id": "433b",
-      "bookname": "2021",
-      "filename": "1717935935327---2021-2022.pdf",
-      "subject": "Java",
-      "description": "new book",
-      "location": "Books\\1717935935327---2021-2022.pdf"
-    },
-    {
-      "id": "ef29",
-      "bookname": "h",
-      "filename": "1717936044282---2401.15024v1.pdf",
-      "subject": "C++",
-      "description": "n",
-      "location": "Books\\1717936044282---2401.15024v1.pdf"
-    },
-    {
-      "id": "74d6",
-      "bookname": "python book",
-      "filename": "1717937499753---Brender_Markov_2013_risk_perception.pdf",
-      "subject": "Python",
-      "description": "new tips are available in the pack",
-      "location": "Books\\1717937499753---Brender_Markov_2013_risk_perception.pdf"
-    },
-    {
-      "id": "8b2a",
-      "bookname": "python book",
-      "filename": "1717937562999---2021-2022.pdf",
-      "subject": "Python",
-      "description": "new tips are available in the pack",
-      "location": "Books\\1717937562999---2021-2022.pdf"
-    },
-    {
-      "id": "5b2e",
-      "bookname": "python book",
-      "filename": "1717937562999---2021-2022.pdf",
-      "subject": "Python",
-      "description": "new tips are available in the pack",
-      "location": "Books\\1717937562999---2021-2022.pdf"
-    },
-    {
-      "id": "5fcc",
-      "bookname": "python book",
-      "filename": "1717937562999---2021-2022.pdf",
-      "subject": "Python",
-      "description": "new tips are available in the pack",
-      "location": "Books\\1717937562999---2021-2022.pdf"
-    },
-    {
-      "id": "a311",
-      "bookname": "python book",
-      "filename": "1717937589604---2021-2022.pdf",
-      "subject": "Python",
-      "description": "new tips are available in the pack",
-      "location": "Books\\1717937589604---2021-2022.pdf"
-    },
-    {
-      "id": "e6b6",
-      "bookname": "python book",
-      "filename": "1717937589604---2021-2022.pdf",
-      "subject": "Python",
-      "description": "new tips are available in the pack",
-      "location": "Books\\1717937589604---2021-2022.pdf"
-    },
-    {
-      "id": "6040",
-      "bookname": "python book",
-      "filename": "1717937589604---2021-2022.pdf",
-      "subject": "Python",
-      "description": "new tips are available in the pack",
-      "location": "Books\\1717937589604---2021-2022.pdf"
-    },
+    
     {
       "id": "8166",
       "bookname": "12",
@@ -137,18 +66,6 @@
     {
       "id": "009e",
       "name": "Java"
-    }
-  ],
-  "users": [
-    {
-      "id": "6a8c",
-      "name": "admin",
-      "password": "differential"
-    },
-    {
-      "id": "9e72",
-      "name": "admin",
-      "password": "differential"
     }
   ]
 }
