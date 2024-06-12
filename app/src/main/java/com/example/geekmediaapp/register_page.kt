@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.geekmediaapp.Retrofit.User
 import com.example.geekmediaapp.databinding.FragmentRegisterPageBinding
@@ -53,6 +54,7 @@ class register_page : Fragment() {
                 if (task.isSuccessful) {
                     dialog.dismiss()
                     Toaster.toast(requireContext(), "Register Success")
+                    findNavController().navigate(R.id.action_register_page2_to_login_page2)
                 } else {
                     dialog.dismiss()
                     Toaster.toast(requireContext(), "Register Failed")
