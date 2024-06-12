@@ -18,7 +18,7 @@ A web browser or a compatible device for accessing the library
 ## Installation
 
 Clone the repository to your local machine:
-*git clone https://github.com/YourUsername/GeekMedia-Book-List.git*
+*git clone https://github.com/danielprinced/geek-media.git*
 
 
 Navigate to the project directory:
