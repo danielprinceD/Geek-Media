@@ -16,7 +16,6 @@ class Dialog (val activity : Activity) {
         isDialog.show()
     }
     fun dismiss(){
-        if (isDialog!=null)
             isDialog.dismiss()
     }
 }
